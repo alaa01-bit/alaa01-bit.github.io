@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa Abdel Fattah Allam | AI &amp; Foundation Models Researcher</title>
+  <meta name="description" content="Portfolio of Alaa Abdel Fattah Allam - Master's Researcher in AI &amp; Data Science, Foundation Model Architectures, Pretraining Data Curation, and Safety Alignment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="cobalt"] {
+      --bg: #0b0f19;
+      --bg-surface: #111827;
+      --bg-card: #151f32;
+      --bg-card-hover: #1b273f;
+      --border: #1e293d;
+      --border-accent: rgba(59, 130, 246, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.16);
+      --purple: #6366f1;
+      --purple-glow: rgba(99, 102, 241, 0.16);
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --blue: #3b82f6;
+      --grad-primary: linear-gradient(135deg, #2563eb, #0ea5e9);
+      --grad-photo: linear-gradient(145deg, rgba(37, 99, 235, 0.5), rgba(56, 189, 248, 0.3), rgba(30, 41, 59, 0.8));
+    }
+
+    [data-theme="emerald"] {
+      --bg: #090e0c;
+      --bg-surface: #0f1815;
+      --bg-card: #13221d;
+      --bg-card-hover: #182c25;
+      --border: #1c352c;
+      --border-accent: rgba(16, 185, 129, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --cyan: #10b981;
+      --cyan-glow: rgba(16, 185, 129, 0.16);
+      --purple: #059669;
+      --purple-glow: rgba(5, 150, 105, 0.16);
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --blue: #059669;
+      --grad-primary: linear-gradient(135deg, #059669, #10b981);
+      --grad-photo: linear-gradient(145deg, rgba(5, 150, 105, 0.5), rgba(16, 185, 129, 0.3), rgba(27, 51, 43, 0.8));
+    }
+
+    [data-theme="titanium"] {
+      --bg: #0d0f12;
+      --bg-surface: #14181f;
+      --bg-card: #1b202a;
+      --bg-card-hover: #232936;
+      --border: #28303e;
+      --border-accent: rgba(217, 119, 6, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --cyan: #d97706;
+      --cyan-glow: rgba(217, 119, 6, 0.16);
+      --purple: #b45309;
+      --purple-glow: rgba(180, 83, 9, 0.16);
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --blue: #d97706;
+      --grad-primary: linear-gradient(135deg, #d97706, #f59e0b);
+      --grad-photo: linear-gradient(145deg, rgba(217, 119, 6, 0.5), rgba(245, 158, 11, 0.3), rgba(39, 45, 58, 0.8));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      selection-background-color: var(--cyan);
+      selection-color: #000;
+    }
+
+    /* Ambient Background Glows */
+    .ambient-glow-1 {
+      position: absolute;
+      top: -120px;
+      left: 15%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, var(--cyan-glow) 0%, rgba(9, 13, 22, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-glow-2 {
+      position: absolute;
+      top: 600px;
+      right: 10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--purple-glow) 0%, rgba(9, 13, 22, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+    }
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-avatar-mini {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--grad-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 10px var(--cyan-glow);
+    }
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.3px;
+    }
+    .brand-role {
+      font-size: 0.72rem;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+    .btn-nav-cv {
+      background: var(--grad-primary);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 0.84rem !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 10px var(--cyan-glow);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+    .btn-nav-cv:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px var(--cyan-glow);
+    }
+
+    /* Theme Selector */
+    .theme-selector-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+    }
+    .theme-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 3px;
+    }
+    .theme-btn {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: all 0.2s ease;
+    }
+    .theme-btn:hover {
+      transform: scale(1.15);
+    }
+    .theme-btn.active {
+      border-color: #ffffff;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+    .color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 80px 24px 60px;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 20px;
+      letter-spacing: 0.4px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .hero-title {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 95%;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      background: var(--grad-primary);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px var(--cyan-glow);
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--cyan-glow);
+      opacity: 0.96;
+    }
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover {
+      background: var(--bg-card);
+      border-color: var(--cyan);
+      color: #fff;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-icon:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      background: var(--bg-card);
+      transform: translateY(-2px);
+    }
+
+    /* Photo Container */
+    .hero-photo-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .photo-frame {
+      position: relative;
+      width: 330px;
+      height: 410px;
+      border-radius: 24px;
+      padding: 6px;
+      background: var(--grad-photo);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7), 0 0 25px var(--cyan-glow);
+      transition: all 0.3s ease;
+    }
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background: #090e18;
+    }
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.04) brightness(0.98);
+      transition: transform 0.4s ease;
+    }
+    .profile-photo:hover {
+      transform: scale(1.03);
+    }
+    .photo-floating-card {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .card-icon-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .card-meta-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .card-meta-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Key Stats Bar */
+    .stats-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+    .stats-grid {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 24px 16px;
+      gap: 20px;
+    }
+    .stat-item {
+      text-align: center;
+      border-right: 1px solid var(--border);
+      padding: 10px 16px;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Section Headers */
+    .section-wrap {
+      max-width: 1240px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+    }
+    .section-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .section-tag {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Featured Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--cyan-glow);
+    }
+    .project-card.flagship {
+      grid-column: span 2;
+      background: linear-gradient(145deg, var(--bg-surface), var(--bg-card));
+      border-color: var(--border-accent);
+    }
+    .project-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .pill {
+      font-size: 0.74rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pill-flagship { background: rgba(59, 130, 246, 0.15); color: var(--cyan); border: 1px solid var(--border-accent); }
+    .pill-conf { background: rgba(245, 158, 11, 0.15); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.35); }
+    .pill-enterprise { background: rgba(99, 102, 241, 0.15); color: var(--purple); border: 1px solid rgba(99, 102, 241, 0.35); }
+    
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .project-subtitle {
+      font-size: 0.88rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .project-features {
+      list-style: none;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .project-features li {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .project-features li::before {
+      content: "▹";
+      color: var(--cyan);
+      font-size: 0.9rem;
+    }
+
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .tech-tag {
+      background: #090e17;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 0.76rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: auto;
+    }
+    .btn-github {
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-github:hover {
+      background: var(--cyan);
+      color: #000;
+      border-color: var(--cyan);
+    }
+    .btn-demo {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--border-accent);
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-demo:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: var(--cyan);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .skill-category-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.25s;
+    }
+    .skill-category-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .skill-cat-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .skill-cat-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .skill-pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-pill {
+      background: #0b101c;
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .skill-pill.highlight {
+      border-color: rgba(6, 182, 212, 0.3);
+      color: var(--cyan);
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--border);
+      margin-left: 20px;
+      padding-left: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .timeline-item {
+      position: relative;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -37px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--cyan);
+      box-shadow: 0 0 10px var(--cyan-glow);
+    }
+    .timeline-time {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .timeline-org {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .timeline-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .timeline-bullets li::before {
+      content: "•";
+      color: var(--cyan);
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    /* Contact Card */
+    .contact-box {
+      background: linear-gradient(145deg, #0f172a, #162038);
+      border: 1px solid var(--border-accent);
+      border-radius: 24px;
+      padding: 48px 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .contact-info-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .contact-info-desc {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+    .contact-detail-row strong {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.84rem;
+    }
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    /* Resume Preview Modal */
+    .resume-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(5, 8, 15, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .resume-modal-overlay.active {
+      display: flex;
+    }
+    .resume-modal-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 18px;
+      width: 95%;
+      max-width: 960px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px var(--cyan-glow);
+    }
+    .resume-modal-header {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+    .resume-modal-body {
+      flex: 1;
+      width: 100%;
+      height: calc(100% - 56px);
+      background: #1e293b;
+      position: relative;
+    }
+    .resume-modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Toast Notification */
+    #toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: var(--emerald);
+      color: #000;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 18px;
+      position: fixed;
+      z-index: 1000;
+      bottom: 30px;
+      right: 30px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s, bottom 0.3s;
+    }
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 40px;
+      }
+      .hero-desc { margin: 0 auto 28px; }
+      .hero-cta { justify-content: center; }
+      .social-links { justify-content: center; }
+      .hero-photo-wrapper { margin-top: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.flagship { grid-column: span 1; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; padding: 28px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-avatar-mini">AA</div>
+        <div>
+          <div class="brand-name">Alaa Abdel Fattah Allam</div>
+          <div class="brand-role">AI &amp; Foundation Models Researcher</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Research &amp; Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="Alaa_Allam_CV.pdf" target="_blank" download class="btn-nav-cv">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Download CV (PDF)
+          </a>
+        </li>
+        <li class="theme-selector-pill">
+          <span class="theme-label">Theme</span>
+          <button class="theme-btn active" onclick="setTheme('cobalt', this)" title="Executive Sapphire (Default)">
+            <span class="color-dot" style="background: #2563eb;"></span>
+          </button>
+          <button class="theme-btn" onclick="setTheme('emerald', this)" title="Nordic Emerald">
+            <span class="color-dot" style="background: #10b981;"></span>
+          </button>
+          <button class="theme-btn" onclick="setTheme('titanium', this)" title="Titanium Gold">
+            <span class="color-dot" style="background: #d97706;"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="about">
+    <div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Targeting Foundation Model Research &bull; MBZUAI / Global AI Labs</span>
+      </div>
+      <h1 class="hero-title">Engineering the Core of Next-Gen Foundation Models.</h1>
+      <div class="hero-subtitle">M.Sc. Artificial Intelligence &amp; Data Science &bull; AI Research Consultant</div>
+      <p class="hero-desc">
+        I research and build high-performance deep learning architectures, large-scale pretraining data pipelines, and empirical model safety frameworks. My work spans modern <strong>Transformer innovations (Grouped-Query Attention, RoPE, Sparse MoE)</strong>, <strong>MinHash LSH curation</strong>, and <strong>distributed deep learning (PyTorch FSDP &amp; ZeRO-3)</strong>.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Explore Research Projects
+        </a>
+        <a href="Alaa_Allam_CV.pdf" target="_blank" onclick="openResumeModal(event)" class="btn-outline">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          View ATS Resume (PDF)
+        </a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/alaa01-bit" target="_blank" class="social-icon" title="GitHub Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/alaa-a-allam" target="_blank" class="social-icon" title="LinkedIn Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:alaaallam22003@outlook.com" class="social-icon" title="Email Alaa">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <span style="font-size: 0.85rem; color: var(--text-dim); margin-left: 8px;">Cairo, Egypt &bull; +20 122 090 9757</span>
+      </div>
+    </div>
+
+    <!-- Portrait Photo -->
+    <div class="hero-photo-wrapper">
+      <div class="photo-frame">
+        <div class="photo-inner">
+          <img src="me2.jpeg" alt="Alaa Abdel Fattah Allam" class="profile-photo">
+        </div>
+        <div class="photo-floating-card">
+          <div class="card-icon-badge">⚡</div>
+          <div>
+            <div class="card-meta-title">OpenFoundation-Engine</div>
+            <div class="card-meta-sub">Active MoE Pretraining Lab</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">End-to-End AI Repositories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Rank 3rd</div>
+        <div class="stat-label">B.Sc. Department Honors (3.5 GPA)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">90+</div>
+        <div class="stat-label">Undergraduate Engineers Mentored</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1st Int.</div>
+        <div class="stat-label">AI Conference Presentation (Jordan)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Research & Projects -->
+  <section class="section-wrap" id="projects">
+    <div class="section-header">
+      <span class="section-tag">Proof of Work</span>
+      <h2 class="section-title">Featured Research &amp; Engineering Systems</h2>
+      <p class="section-subtitle">Real-world AI systems, Transformer architectural kernels, distributed HPC modeling, and agentic topologies with open-source repositories.</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- FLAGSHIP PROJECT: OpenFoundation-Engine -->
+      <div class="project-card flagship">
+        <div>
+          <div class="project-badge-row">
+            <span class="pill pill-flagship">FLAGSHIP RESEARCH ENGINE</span>
+            <span style="font-size: 0.8rem; color: var(--emerald); font-family: 'JetBrains Mono';">● LIVE ON GITHUB</span>
+          </div>
+          <h3 class="project-title">OpenFoundation-Engine: Modular LLM Pretraining, Data Curation &amp; Safety Framework</h3>
+          <div class="project-subtitle">Decoder-Only Transformers &bull; Grouped-Query Attention &bull; Sparse MoE &bull; MinHash LSH &bull; Bias Auditing</div>
+          <p class="project-desc">
+            A comprehensive research framework for building, tweaking, training, and risk-managing modern foundation models. Directly targets the research mandate of institutions like the <strong>Institute of Foundation Models (MBZUAI)</strong>.
+          </p>
+          <ul class="project-features">
+            <li><strong>Architecture &amp; Kernels:</strong> Grouped-Query Attention (4:1 GQA ratio slashing KV cache by 75%), Rotary Position Embeddings (RoPE), SwiGLU FFN, and Sparse Mixture of Experts (MoE) with Top-2 routing and auxiliary load-balancing loss.</li>
+            <li><strong>Data Curation Pipeline:</strong> 64-permutation MinHash LSH deduplication at $\ge 0.80$ Jaccard similarity, RefinedWeb/FineWeb heuristic quality &amp; repetition filters, custom BPE tokenizer with compression analytics (1.62&times; compression), and binary memory-mapped serialization (.bin/.idx).</li>
+            <li><strong>Testing &amp; Risk Management:</strong> Cross-entropy &amp; perplexity tracking, MMLU multi-choice log-likelihood scoring runner, counterfactual log-odds demographic bias probing ($\Delta \log P$), and predictive token entropy for hallucination auditing.</li>
+            <li><strong>Distributed HPC Modeling:</strong> Hardware Model FLOPs Utilization (MFU) calculator on NVIDIA H100 clusters, Loss Spike Anomaly Detector, and per-GPU VRAM models for ZeRO-1/2/3 vs PyTorch FSDP.</li>
+          </ul>
+          <div class="project-tech-tags">
+            <span class="tech-tag">PyTorch / NumPy</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Transformers</span>
+            <span class="tech-tag">RoPE &amp; GQA</span>
+            <span class="tech-tag">Mixture of Experts</span>
+            <span class="tech-tag">MinHash LSH</span>
+            <span class="tech-tag">BPE Tokenizer</span>
+            <span class="tech-tag">FSDP &amp; ZeRO-3</span>
+            <span class="tech-tag">MMLU Benchmarks</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/alaa01-bit/OpenFoundation-Engine" target="_blank" class="btn-github">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            github.com/alaa01-bit/OpenFoundation-Engine
+          </a>
+          <a href="http://127.0.0.1:8000" target="_blank" class="btn-demo">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Interactive Dashboard (Port 8000)
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Document Intelligence & Arabic Generative OCR -->
+      <div class="project-card">
+        <div>
+          <div class="project-badge-row">
+            <span class="pill pill-conf">CONFERENCE RESEARCH</span>
+            <span class="pill pill-flagship">99.5% ACCURACY</span>
+          </div>
+          <h3 class="project-title">Document Intelligence &amp; Generative Data Augmentation</h3>
+          <div class="project-subtitle">1st International Conference on Universities and AI Technology (Jordan)</div>
+          <p class="project-desc">
+            End-to-end intelligent document digitization system. Engineered custom deep neural networks recognizing Arabic national ID digits with 99.5% accuracy, combined with GANs (DCGAN, StyleGAN2-ADA) to synthesize out-of-distribution fraud-detection edge cases.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">DCGAN / StyleGAN2</span>
+            <span class="tech-tag">EasyOCR</span>
+            <span class="tech-tag">Flask API</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/alaa01-bit/-Document-Intelligence-.NET-Gateway" target="_blank" class="btn-github">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            github.com/alaa01-bit/Document-Intelligence
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Autonomous Market Intelligence & Multi-Agent EDA -->
+      <div class="project-card">
+        <div>
+          <div class="project-badge-row">
+            <span class="pill pill-enterprise">MULTI-AGENT TOPOLOGY</span>
+            <span class="pill pill-flagship">LANGGRAPH / CREWAI</span>
+          </div>
+          <h3 class="project-title">Autonomous Market Intelligence &amp; Multi-Agent EDA</h3>
+          <div class="project-subtitle">Cyclic Graph Orchestration &bull; AST Code Sandbox &bull; Automated Reasoning</div>
+          <p class="project-desc">
+            Architected a stateful multi-agent system simulating collaborative research teams (Mentor, Feature Planner, Code Reviewer, Debugger). Implemented hierarchical orchestration to evaluate code for architectural flaws and audit LLM reasoning traces.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">CrewAI</span>
+            <span class="tech-tag">Python AST</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">OpenAI API</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/alaa01-bit/Autonomous-Market-Intelligence-Multi-Agent-EDA" target="_blank" class="btn-github">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            github.com/alaa01-bit/Agentic-Reasoning
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Operational Decision Support & SLA Risk Engine -->
+      <div class="project-card">
+        <div>
+          <div class="project-badge-row">
+            <span class="pill pill-enterprise">ENTERPRISE DECISION AI</span>
+            <span class="pill pill-conf">&lt;15ms INFERENCE</span>
+          </div>
+          <h3 class="project-title">Operational Decision Support &amp; SLA Risk Engine</h3>
+          <div class="project-subtitle">Dual-Model ML Architecture &bull; Drift Telemetry &bull; FastAPI Microservice</div>
+          <p class="project-desc">
+            Production-grade decision-support microservice analyzing operational telemetry to predict SLA breach probability (89% accuracy) and forecast resolution durations using Random Forest and Gradient Boosting with automated drift monitoring.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Model Monitoring</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/alaa01-bit/Operational-Decision-Support" target="_blank" class="btn-github">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            github.com/alaa01-bit/Operational-Decision-Support
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="section-wrap" id="skills">
+    <div class="section-header">
+      <span class="section-tag">Core Competencies</span>
+      <h2 class="section-title">Technical &amp; Research Stack</h2>
+      <p class="section-subtitle">Deep algorithmic and systems understanding from theoretical mathematical foundations to high-performance distributed training.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🧠</div>
+          <div class="skill-cat-title">Foundation Model Architectures</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">Decoder-Only Transformers</span>
+          <span class="skill-pill highlight">Grouped-Query Attention (GQA)</span>
+          <span class="skill-pill highlight">Rotary Position Embeddings (RoPE)</span>
+          <span class="skill-pill highlight">Sparse Mixture-of-Experts (MoE)</span>
+          <span class="skill-pill">SwiGLU Gated FFN</span>
+          <span class="skill-pill">RMSNorm Pre-normalization</span>
+          <span class="skill-pill">KV Caching &amp; PagedAttention</span>
+          <span class="skill-pill">FlashAttention-2 Math</span>
+          <span class="skill-pill">State Space Models (Mamba)</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">⚡</div>
+          <div class="skill-cat-title">Data Curation &amp; Tokenization</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">MinHash LSH Deduplication</span>
+          <span class="skill-pill highlight">Heuristic Quality Filtering</span>
+          <span class="skill-pill highlight">Custom BPE Tokenizer Engine</span>
+          <span class="skill-pill">SentencePiece &amp; Tiktoken</span>
+          <span class="skill-pill">Memory-Mapped Datasets (.bin/.idx)</span>
+          <span class="skill-pill">PyArrow &amp; Parquet</span>
+          <span class="skill-pill">Compression Ratio Analytics (BPT/CPT)</span>
+          <span class="skill-pill">Synthetic Data Generation (GANs)</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🛡️</div>
+          <div class="skill-cat-title">Evaluation, Safety &amp; Risk</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">LM Evaluation Harness (lm-eval)</span>
+          <span class="skill-pill highlight">Perplexity &amp; Cross-Entropy Tracking</span>
+          <span class="skill-pill highlight">MMLU Multi-Choice Scoring</span>
+          <span class="skill-pill highlight">Counterfactual Demographic Bias Probing</span>
+          <span class="skill-pill">Token Entropy Hallucination Probing</span>
+          <span class="skill-pill">Safety Red-Teaming Probes</span>
+          <span class="skill-pill">DPO &amp; RLHF Alignment Principles</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🚀</div>
+          <div class="skill-cat-title">Distributed Deep Learning &amp; HPC</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">PyTorch FSDP (Fully Sharded Data Parallel)</span>
+          <span class="skill-pill highlight">DeepSpeed ZeRO-1 / ZeRO-2 / ZeRO-3</span>
+          <span class="skill-pill highlight">Model FLOPs Utilization (MFU)</span>
+          <span class="skill-pill">Mixed Precision (BF16 / FP8)</span>
+          <span class="skill-pill">Loss Spike Anomaly Detection</span>
+          <span class="skill-pill">Cosine Warmup Schedulers</span>
+          <span class="skill-pill">Docker &amp; Linux / Bash</span>
+          <span class="skill-pill">Weights &amp; Biases / MLflow</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">💻</div>
+          <div class="skill-cat-title">Programming Languages</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">Python (NumPy, SciPy, PyTorch)</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">C# / .NET 10 WebAPI</span>
+          <span class="skill-pill">SQL (PostgreSQL, MySQL, SQLite)</span>
+          <span class="skill-pill">R</span>
+          <span class="skill-pill">Dart / Flutter</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">📐</div>
+          <div class="skill-cat-title">Mathematical Rigor</div>
+        </div>
+        <div class="skill-pill-container">
+          <span class="skill-pill highlight">Mathematical Optimization</span>
+          <span class="skill-pill highlight">Information Theory &amp; Entropy</span>
+          <span class="skill-pill">Multivariable Calculus</span>
+          <span class="skill-pill">Linear Algebra &amp; Eigendecomposition</span>
+          <span class="skill-pill">Probability &amp; Applied Statistics</span>
+          <span class="skill-pill">Algorithmic Complexity &amp; Memory Layouts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Timeline -->
+  <section class="section-wrap" id="experience">
+    <div class="section-header">
+      <span class="section-tag">Trajectory</span>
+      <h2 class="section-title">Research &amp; Professional Experience</h2>
+      <p class="section-subtitle">A combination of empirical AI research consultancy, university instruction, and applied machine learning engineering.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <!-- Research & Work -->
+      <div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; color: var(--cyan);">Professional Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">JAN 2025 &ndash; PRESENT</div>
+            <div class="timeline-title">AI Research Consultant</div>
+            <div class="timeline-org">National Research Centre (NRC) &bull; Giza, Egypt</div>
+            <ul class="timeline-bullets">
+              <li>Formulate empirical deep learning methodologies and guide interdisciplinary research scientists in adapting foundation models and predictive architectures.</li>
+              <li>Architect automated data curation and quality pipelines to eradicate contamination, feature leakage, and measurement bias across experimental domains.</li>
+              <li>Establish reproducible benchmarking baselines, logging loss dynamics, ablations, and statistical significance tests.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">SEPT 2024 &ndash; PRESENT</div>
+            <div class="timeline-title">Graduate Teaching Assistant</div>
+            <div class="timeline-org">Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT)</div>
+            <ul class="timeline-bullets">
+              <li>Instruct and mentor 90+ undergraduate engineers in Python programming, Data Structures &amp; Algorithms, and Machine Learning foundations.</li>
+              <li>Design computational problem sets and conduct code reviews emphasizing algorithmic complexity ($O(N)$ bounds) and clean modular software architecture.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">SEPT 2023 &ndash; NOV 2023</div>
+            <div class="timeline-title">ML &amp; Data Science Research Intern</div>
+            <div class="timeline-org">Technocolabs Softwares &bull; Remote</div>
+            <ul class="timeline-bullets">
+              <li>Researched and benchmarked supervised learning models and NLP sentiment algorithms on noisy, real-world data.</li>
+              <li>Executed exploratory data analysis (EDA), automated outlier imputation, and cross-validation workflows.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; color: var(--purple);">Academic Credentials</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--purple); box-shadow: 0 0 10px var(--purple-glow);"></div>
+            <div class="timeline-time" style="color: var(--purple);">MAY 2025 &ndash; ONGOING</div>
+            <div class="timeline-title">M.Sc. in Artificial Intelligence &ndash; Data Science Major</div>
+            <div class="timeline-org">Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT)</div>
+            <ul class="timeline-bullets">
+              <li><strong>Research Focus:</strong> Foundation Model Pre-training, Attention Kernels (GQA/MLA), Sparse Mixture-of-Experts (MoE), Data Deduplication Pipelines, and Empirical Safety Alignment.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--purple); box-shadow: 0 0 10px var(--purple-glow);"></div>
+            <div class="timeline-time" style="color: var(--purple);">SEPT 2020 &ndash; JULY 2024</div>
+            <div class="timeline-title">B.Sc. in Artificial Intelligence &ndash; Data Science Major</div>
+            <div class="timeline-org">AASTMT &bull; GPA: 3.5 / 4.0 (Ranked 3rd in Department)</div>
+            <ul class="timeline-bullets">
+              <li><strong>Rigorous Coursework:</strong> Deep Learning, Advanced NLP, Computer Vision, Distributed Databases, Data Structures &amp; Algorithms, Mathematical Optimization, Multivariable Calculus, Linear Algebra, Probability &amp; Statistics.</li>
+              <li><strong>Conference Paper:</strong> Presented graduation research at the 1st International Conference on Universities and AI Technology in Amman, Jordan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-wrap" id="contact">
+    <div class="contact-box">
+      <div>
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="contact-info-title">Ready to build groundbreaking Foundation Models.</h2>
+        <p class="contact-info-desc">
+          I am actively preparing for elite AI research internships and collaborative engineering opportunities, particularly with research institutions advancing high-performance deep learning.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail-row">
+            <svg width="20" height="20" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span>Email: <strong>alaaallam22003@outlook.com</strong></span>
+            <button onclick="copyEmail()" style="background: none; border: 1px solid var(--border); color: var(--cyan); padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; cursor: pointer; margin-left: 6px;">Copy</button>
+          </div>
+          <div class="contact-detail-row">
+            <svg width="20" height="20" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Phone: <strong>+20 122 090 9757</strong></span>
+          </div>
+          <div class="contact-detail-row">
+            <svg width="20" height="20" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Location: <strong>Cairo, Egypt</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Contact Form -->
+      <form onsubmit="handleContact(event)" style="display: flex; flex-direction: column; gap: 14px;">
+        <input type="text" id="contact-name" placeholder="Your Name or Institution" required style="background: #090e18; border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 12px 14px; outline: none; font-family: inherit;">
+        <input type="email" id="contact-email" placeholder="Your Email Address" required style="background: #090e18; border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 12px 14px; outline: none; font-family: inherit;">
+        <textarea id="contact-msg" rows="4" placeholder="Your message or collaboration inquiry..." required style="background: #090e18; border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 12px 14px; outline: none; font-family: inherit; resize: vertical;"></textarea>
+        <button type="submit" class="btn-primary" style="justify-content: center; cursor: pointer; border: none;">
+          Send Direct Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Alaa Abdel Fattah Allam &bull; Built with clean semantic HTML5, CSS3 &amp; JavaScript &bull; <a href="https://github.com/alaa01-bit/OpenFoundation-Engine" target="_blank">OpenFoundation-Engine</a></p>
+  </footer>
+
+  <!-- Resume Preview Modal -->
+  <div id="resume-modal" class="resume-modal-overlay" onclick="closeResumeModal(event)">
+    <div class="resume-modal-content" onclick="event.stopPropagation()">
+      <div class="resume-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="pill pill-flagship">ATS COMPLIANT</span>
+          <span style="font-weight: 700; font-size: 1.02rem; color: #fff;">Alaa Abdel Fattah Allam &mdash; Research Resume</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="Alaa_Allam_CV.pdf" target="_blank" class="btn-demo" style="padding: 6px 12px; font-size: 0.78rem;">
+            Full Tab ↗
+          </a>
+          <a href="Alaa_Allam_CV.pdf" download="Alaa_Allam_CV.pdf" class="btn-primary" style="padding: 6px 14px; font-size: 0.78rem;">
+            Download
+          </a>
+          <button onclick="closeResumeModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.6rem; cursor: pointer; padding: 0 8px; line-height: 1;">&times;</button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="Alaa_Allam_CV.pdf" id="resume-iframe" title="Alaa Allam Resume Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast">Message received! Thank you, Alaa will reply shortly.</div>
+
+  <script>
+    function openResumeModal(e) {
+      if (e) e.preventDefault();
+      const modal = document.getElementById('resume-modal');
+      const iframe = document.getElementById('resume-iframe');
+      if (iframe && !iframe.src.includes('Alaa_Allam_CV.pdf')) {
+        iframe.src = 'Alaa_Allam_CV.pdf';
+      }
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal(e) {
+      const modal = document.getElementById('resume-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeResumeModal();
+    });
+    function setTheme(themeName, btnEl) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('portfolio_theme', themeName);
+      document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnEl) {
+        btnEl.classList.add('active');
+      } else {
+        const matchingBtn = document.querySelector(`.theme-btn[onclick*="${themeName}"]`);
+        if (matchingBtn) matchingBtn.classList.add('active');
+      }
+    }
+
+    // Auto-restore theme on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('portfolio_theme') || 'cobalt';
+      setTheme(savedTheme);
+    });
+
+    function copyEmail() {
+      navigator.clipboard.writeText("alaaallam22003@outlook.com");
+      showToast("Email copied to clipboard!");
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      showToast(`Thank you, ${name}! Your inquiry has been recorded.`);
+      e.target.reset();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.className = "show";
+      setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3500);
+    }
+  </script>
+</body>
+</html>
+
